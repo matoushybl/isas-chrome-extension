@@ -17,6 +17,8 @@ document.addEventListener('DOMContentLoaded', function () {
     select.addEventListener("change", function changed() {
         document.cookie = "id=" + classId[select.selectedIndex];
     });
+
+    select.value = classes[classId.indexOf(getIdFromCookie(false))];
 });
 
 function onMarksClick() {
@@ -44,14 +46,14 @@ function onSubstitutionClick() {
         date.setDate(date.getDate() + toAdd);
     }
 
-    var url = "http://www.gymkyjov.cz/isas/suplovani.php?zobraz=tridy-1&suplovani=" + getIdFromCookie() + "&rezim=den&datum=" + date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear();
+    var url = "http://www.gymkyjov.cz/isas/suplovani.php?zobraz=tridy-1&suplovani=" + getIdFromCookie(true) + "&rezim=den&datum=" + date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear();
     chrome.tabs.create({
         'url': url
     });
 }
 
 function onTimetableClick() {
-    var url = "http://www.gymkyjov.cz/isas/rozvrh-hodin.php?zobraz=tridy-1&rozvrh=" + getIdFromCookie();
+    var url = "http://www.gymkyjov.cz/isas/rozvrh-hodin.php?zobraz=tridy-1&rozvrh=" + getIdFromCookie(true);
     chrome.tabs.create({
         'url': url
     });
@@ -75,10 +77,12 @@ function onWebClick() {
     });
 }
 
-function getIdFromCookie() {
+function getIdFromCookie(showAlert) {
     var arrayOfCookies = document.cookie.split('=');
     if (arrayOfCookies.length < 2) {
-        alert("You have not set a class, please set it.");
+        if (showAlert) {
+            alert("You have not set a class, please set it.");
+        }
         return "69";
     }
     return arrayOfCookies[1];
