@@ -29,3 +29,8 @@ button:active {
 	position:relative;
 	top:1px;
 }
+
+#classSelector {
+    margin-top: 3%;
+    width: 90%;
+}
