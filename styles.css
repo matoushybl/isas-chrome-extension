@@ -2,35 +2,35 @@ body {
     min-width: 300px;
     padding: 3%;
 }
-
 h1 {
     color: #009688;
     font-weight: bold;
 }
-
 button {
-	background-color:#bdbdbd;
-	cursor:pointer;
-	color:#009687;
-	font-size:18px;
-	font-weight:bold;
-	padding:9px 31px;
-	text-decoration:none;
+    background-color: #bdbdbd;
+    cursor: pointer;
+    color: #009687;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 9px 31px;
+    text-decoration: none;
     border: 0px;
     width: 90%;
     margin-bottom: 3%;
 }
-
 button:hover {
-	background-color:#9e9e9e;
+    background-color: #9e9e9e;
 }
-
 button:active {
-	position:relative;
-	top:1px;
+    position: relative;
+    top: 1px;
 }
-
 #classSelector {
     margin-top: 3%;
     width: 90%;
+}
+#error {
+    color: #F44336;
+    font-weight: bold;
+    font-size: 1em;
 }

@@ -16,10 +16,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
     select.addEventListener("change", function changed() {
         document.cookie = "id=" + classId[select.selectedIndex];
+        changeErrorVisibility();
     });
 
     select.value = classes[classId.indexOf(getIdFromCookie(false))];
+    changeErrorVisibility();
 });
+
+function changeErrorVisibility() {
+    var id = getIdFromCookie(false);
+    if (id != "") {
+        var errorMsg = document.getElementById("error").style.visibility = "hidden";
+    }
+}
 
 function onMarksClick() {
     chrome.tabs.create({
