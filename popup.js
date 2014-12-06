@@ -94,7 +94,7 @@ function getIdFromCookie(showAlert) {
     var arrayOfCookies = document.cookie.split('=');
     if (arrayOfCookies.length < 2) {
         if (showAlert) {
-            alert("You have not set a class, please set it.");
+            alert("Nemáte nastavenu třídu, prosím nastavte ji.");
         }
         return "";
     }
