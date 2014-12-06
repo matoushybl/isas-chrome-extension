@@ -1,36 +1,55 @@
 body {
     min-width: 300px;
     padding: 3%;
+    font-family: 'Roboto', sans-serif;
 }
 h1 {
     color: #009688;
     font-weight: bold;
 }
 button {
-    background-color: #bdbdbd;
+    background-color: #009687;
     cursor: pointer;
-    color: #009687;
+    color: white;
     font-size: 18px;
     font-weight: bold;
     padding: 9px 31px;
     text-decoration: none;
     border: 0px;
-    width: 90%;
-    margin-bottom: 3%;
+    box-shadow: #9E9E9E 0px 0px 1px;
+    width: 100%;
+    margin-bottom: 5%;
 }
 button:hover {
-    background-color: #9e9e9e;
+    background-color: #00897B;
+    box-shadow: #9E9E9E 0px 2px 6px;
 }
 button:active {
+    background-color: #00897B;
     position: relative;
     top: 1px;
+    box-shadow: #9E9E9E 0px 2px 6px;
 }
 #classSelector {
     margin-top: 3%;
-    width: 90%;
+    width: 100%;
 }
 #error {
     color: #F44336;
-    font-weight: bold;
-    font-size: 1em;
+    font-weight: 400;
+    font-size: 1.2em;
+}
+select {
+    height: 5%;
+    width: 30%;
+    background-color: white;
+    border: 0px;
+    border-bottom: 2px;
+    border-bottom-color: #00897B;
+    border-radius: 1px;
+    border-bottom-style: solid;
+}
+label {
+    font-weight: 400;
+    font-size: 1.2em;
 }
