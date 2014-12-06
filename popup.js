@@ -1,5 +1,5 @@
-var classes = ["spA", "spB", "3A", "3B", "okA", "okB", "4A", "4B"];
-var classId = ["69", "70"];
+var classes = ["prA", "skA", "teA", "krA", "knA", "1A", "1B", "sxA", "2A", "2B", "spA", "spB", "3A", "3B", "okA", "okB", "4A", "4B"];
+var classId = ["95", "90", "85", "83", "79", "96", "97", "74", "91", "92", "69", "70", "86", "87", "66", "67", "81", "82"];
 
 document.addEventListener('DOMContentLoaded', function () {
     document.getElementById("marks").addEventListener("click", onMarksClick);
@@ -47,16 +47,20 @@ function onSubstitutionClick() {
     }
 
     var url = "http://www.gymkyjov.cz/isas/suplovani.php?zobraz=tridy-1&suplovani=" + getIdFromCookie(true) + "&rezim=den&datum=" + date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear();
-    chrome.tabs.create({
-        'url': url
-    });
+    if (getIdFromCookie(false) != "") {
+        chrome.tabs.create({
+            'url': url
+        });
+    }
 }
 
 function onTimetableClick() {
     var url = "http://www.gymkyjov.cz/isas/rozvrh-hodin.php?zobraz=tridy-1&rozvrh=" + getIdFromCookie(true);
-    chrome.tabs.create({
-        'url': url
-    });
+    if (getIdFromCookie(false) != "") {
+        chrome.tabs.create({
+            'url': url
+        });
+    }
 }
 
 function onMoodleClick() {
@@ -83,7 +87,7 @@ function getIdFromCookie(showAlert) {
         if (showAlert) {
             alert("You have not set a class, please set it.");
         }
-        return "69";
+        return "";
     }
     return arrayOfCookies[1];
 }
